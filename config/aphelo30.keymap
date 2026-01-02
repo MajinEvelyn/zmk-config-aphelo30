@@ -108,9 +108,9 @@
         Base {
             display-name = "Base";
             bindings = <
-&kp Q           &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I      &kp O    &kp P
-&mt LEFT_ALT A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K      &kp L    &kp SEMI
-&kp Z           &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH
+&kp Q           &kp W          &kp E               &kp R             &kp T          &kp Y          &kp U              &kp I                &kp O          &kp P
+&mt LEFT_ALT A  &layertap 1 S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &capshold 0 G  &capshold 0 H  &mt RIGHT_SHIFT J  &mt RIGHT_CONTROL K  &layertap 2 L  &mt RIGHT_ALT SEMICOLON
+&layuh 4 Z      &kp X          &kp C               &kp V             &kp B          &kp N          &kp M              &kp COMMA            &kp DOT        &kp FSLH
             >;
         };
 
