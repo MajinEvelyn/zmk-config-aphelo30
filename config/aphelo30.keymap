@@ -1,17 +1,157 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
+
+&mt {
+    tapping-term-ms = <350>;
+    flavor = "tap-preferred";
+};
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        f2 {
+            bindings = <&kp F2>;
+            key-positions = <21 22>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <11 12>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        space {
+            bindings = <&kp SPACE>;
+            key-positions = <17 18>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <28 27>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <7 8>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <2 1>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 0>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+
+        grave {
+            bindings = <&kp GRAVE>;
+            key-positions = <28 29>;
+            require-prior-idle-ms = <50>;
+            layers = <0>;
+        };
+    };
+
+    behaviors {
+        layuh: layuh {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYUH";
+            bindings = <&to>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            quick-tap-ms = <500>;
+            require-prior-idle-ms = <500>;
+            flavor = "tap-preferred";
+        };
+
+        layertap: layertap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYERTAP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+            flavor = "tap-preferred";
+        };
+
+        capshold: capshold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAPSHOLD";
+            bindings = <&caps_word>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <350>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Base {
             display-name = "Base";
             bindings = <
-                &kp A &kp B &kp C &kp D &kp E &kp F &kp G &kp H &kp I &kp J
-                &kp K &kp L &kp M &kp N &kp O &kp P &kp Q &kp R &kp S &kp T
-                &kp U &kp V &kp W &kp X &kp Y &kp Z &kp A &kp B &kp C &kp D
+&kp Q           &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I      &kp O    &kp P
+&mt LEFT_ALT A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K      &kp L    &kp SEMI
+&kp Z           &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH
             >;
+        };
+
+        NumPad {
+            bindings = <
+&kp BSLH              &trans    &kp MINUS                       &kp PLUS                 &kp EQUAL  &kp FSLH  &kp N7                   &kp N8  &kp N9  &kp EQUAL
+&kp LBKT              &kp LBKT  &mt LEFT_CONTROL RIGHT_BRACKET  &mt LEFT_SHIFT ASTERISK  &kp FSLH   &kp DOT   &mt LEFT_SHIFT NUMBER_4  &kp N5  &kp N6  &kp SEMI
+&kp LEFT_PARENTHESIS  &trans    &kp RIGHT_PARENTHESIS           &kp DOT                  &kp COMMA  &kp N0    &kp N1                   &kp N2  &kp N3  &kp SQT
+            >;
+
+            label = "NumPad";
+        };
+
+        Nav {
+            bindings = <
+&msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &msc SCRL_UP  &trans    &trans  &trans               &trans                &trans  &trans
+&kp LEFT        &kp DOWN        &kp RIGHT        &kp UP        &kp LGUI  &trans  &mt LEFT_SHIFT HOME  &mt LEFT_CONTROL END  &trans  &trans
+&trans          &mkp MB3        &mkp MB2         &mkp MB1      &trans    &trans  &trans               &trans                &trans  &trans
+            >;
+
+            label = "Nav";
+        };
+
+        Num {
+            bindings = <
+&trans                 &trans                &kp MINUS                  &kp PLUS                 &kp EQUAL  &kp EQUAL  &kp STAR            &kp FSLH              &kp BSLH        &kp SEMI
+&mt LEFT_ALT NUMBER_1  &layertap 1 NUMBER_2  &mt LEFT_CONTROL NUMBER_3  &mt LEFT_SHIFT NUMBER_4  &kp N5     &kp N6     &mt RIGHT_SHIFT N7  &mt RIGHT_CONTROL N8  &layertap 2 N9  &mt RIGHT_ALT N0
+&trans                 &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS      &kp DOT                  &kp COMMA  &kp COMMA  &kp DOT             &kp LBKT              &kp RBKT        &trans
+            >;
+
+            label = "Num";
+        };
+
+        Config {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Config";
         };
     };
 };
