@@ -1,0 +1,4 @@
+name: zmk-keyboard-aphelo30
+build:
+  settings:
+    board_root: .

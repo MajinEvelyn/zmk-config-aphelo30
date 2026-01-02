@@ -1,0 +1,6 @@
+config SHIELD_APHELO30_LEFT
+    def_bool $(shields_list_contains,aphelo30_left)
+  
+config SHIELD_APHELO30_RIGHT
+    def_bool $(shields_list_contains,aphelo30_right)
+  
