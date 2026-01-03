@@ -147,9 +147,9 @@
 
         Config {
             bindings = <
-&kp KP_NUMLOCK  &kp CAPSLOCK   &trans         &trans         &bt BT_CLR     &trans  &trans  &trans  &trans  &trans
-&bt BT_DISC 0   &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans  &trans  &trans  &trans  &trans
-&bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   &trans  &trans  &to 0   &trans  &trans
+&kp KP_NUMLOCK  &kp CAPSLOCK   &sys_reset     &kp PRINTSCREEN  &bt BT_CLR     &kp F1   &kp F2   &kp F3  &kp F4          &kp F5
+&bt BT_DISC 0   &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3    &bt BT_DISC 4  &kp F6   &kp F7   &kp F8  &kp F9          &kp F10
+&bt BT_SEL 0    &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3     &bt BT_SEL 4   &kp F11  &kp F12  &to 0   &studio_unlock  &sys_reset
             >;
 
             label = "Config";
