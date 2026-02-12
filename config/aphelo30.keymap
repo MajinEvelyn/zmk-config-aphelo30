@@ -16,56 +16,70 @@
             bindings = <&kp F2>;
             key-positions = <21 22>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 1 2 3>;
         };
 
         enter {
             bindings = <&kp ENTER>;
             key-positions = <11 12>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 1 2 3>;
         };
 
         space {
             bindings = <&kp SPACE>;
             key-positions = <17 18>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 1 3 2>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <28 27>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 1 2 3>;
         };
 
         backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <7 8>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 2 1 3>;
         };
 
         delete {
             bindings = <&kp DELETE>;
             key-positions = <2 1>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 1 2 3>;
         };
 
         escape {
             bindings = <&kp ESCAPE>;
             key-positions = <1 0>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 1 2 3>;
         };
 
         grave {
             bindings = <&kp GRAVE>;
             key-positions = <28 29>;
             require-prior-idle-ms = <50>;
-            layers = <0>;
+            layers = <0 1 2 3>;
+        };
+
+        baselayer {
+            bindings = <&to 0>;
+            key-positions = <10 11>;
+            require-prior-idle-ms = <200>;
+            layers = <0 2 3 1 4>;
+        };
+
+        numlayer {
+            bindings = <&to 3>;
+            key-positions = <10 11>;
+            require-prior-idle-ms = <200>;
+            layers = <0 2 3 1 4>;
         };
     };
 
