@@ -77,9 +77,30 @@
 
         numlayer {
             bindings = <&to 3>;
-            key-positions = <10 11>;
+            key-positions = <19 18>;
             require-prior-idle-ms = <200>;
             layers = <0 2 3 1 4>;
+        };
+
+        mouse1 {
+            bindings = <&mkp LCLK>;
+            key-positions = <13 12>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2 3>;
+        };
+
+        mouse2 {
+            bindings = <&mkp MB2>;
+            key-positions = <3 2>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2 3>;
+        };
+
+        mouse3 {
+            bindings = <&mkp MB3>;
+            key-positions = <23 22>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2 3>;
         };
     };
 
