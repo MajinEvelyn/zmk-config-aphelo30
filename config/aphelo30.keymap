@@ -144,7 +144,7 @@
         Base {
             display-name = "Base";
             bindings = <
-&kp Q           &kp W          &kp E               &kp R             &kp T          &kp Y          &kp U              &kp I                &kp O          &layuh 5 P
+&layuh 6 Q      &kp W          &kp E               &kp R             &layertap 6 T  &kp Y          &kp U              &kp I                &kp O          &layuh 5 P
 &mt LEFT_ALT A  &layertap 1 S  &mt LEFT_CONTROL D  &mt LEFT_SHIFT F  &capshold 0 G  &capshold 0 H  &mt RIGHT_SHIFT J  &mt RIGHT_CONTROL K  &layertap 2 L  &mt RIGHT_ALT SEMICOLON
 &layuh 4 Z      &kp X          &kp C               &kp V             &kp B          &kp N          &kp M              &kp COMMA            &kp DOT        &kp FSLH
             >;
@@ -198,6 +198,16 @@
             >;
 
             label = "Game";
+        };
+
+        Mouse {
+            bindings = <
+&kp LEFT_ALT      &kp LEFT_SHIFT    &kp LSHFT  &kp LSHFT  &to 0  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_SHIFT    &mkp MB3          &mkp MB2   &mkp MB1   &to 0  &trans  &trans  &trans  &trans  &trans
+&kp LEFT_CONTROL  &kp LEFT_CONTROL  &kp LCTRL  &kp LCTRL  &to 0  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "Mouse";
         };
     };
 };
